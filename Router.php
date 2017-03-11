@@ -29,6 +29,7 @@ class Router
         $filePath = 'templates/'.$this->fileName;
 
         if (!file_exists($filePath)){
+            $this->redirect($filePath);
             return false;
         }
 
