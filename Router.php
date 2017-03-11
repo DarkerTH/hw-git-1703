@@ -20,10 +20,16 @@ class Router
         $this->fileName = $fileName;
     }
 
+    public function redirect($route){
+        header('Location: /?route='.$route);
+        return true;
+    }
+
     public function render(){
         $filePath = 'templates/'.$this->fileName;
 
         if (!file_exists($filePath)){
+            $this->redirect($filePath);
             return false;
         }
 
