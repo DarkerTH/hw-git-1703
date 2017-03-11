@@ -13,4 +13,4 @@ $route = isset($_GET['route']) ? $_GET['route'] : 'index.html';
 $router = new Router();
 $router->setFile($route);
 
-echo $router->render();
+$router->render();

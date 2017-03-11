@@ -21,15 +21,15 @@ class Router
     }
 
     public function redirect($route){
-        header('Location: /?route='.$route);
+        header('Location: /hw-git-1703/index.php?route='.$route);
         return true;
     }
 
     public function render(){
         $filePath = 'templates/'.$this->fileName;
 
-        if (!file_exists($filePath)){
-            $this->redirect($filePath);
+        if (!file_exists($filePath) || empty($this->fileName)){
+            $this->redirect('index.html');
             return false;
         }
 
