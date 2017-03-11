@@ -8,7 +8,9 @@
 
 include('Router.php');
 
+$route = isset($_GET['route']) ? $_GET['route'] : 'index.html';
+
 $router = new Router();
-$router->setFile('index.html');
+$router->setFile($route);
 
 echo $router->render();
